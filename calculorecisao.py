@@ -4,11 +4,22 @@ import datetime
 
 #Recebendo input do salário bruto
 
+#Boas vindas
+
+print ("Seja Bem Vindo! \n")
+
 salario = float ( input('Informe o salário bruto: R$ '))
+
+opcao = int ( input("Foi Justa Causa? \n 1-Sim 2-Não \n"))
+
+if(opcao == 1):
+	print("\n Você provavelmente fez cagada \n")
+else:
+	print("\n Você provavelmente não fez cagada. \n")
 
 #Recebendo data de admissão
 
-data_adm = input ("Informe a data de Admissão, no formato: dia/mes/ano. Exemplo: 01/07/2020: ")
+data_adm = input ("\n Informe a data de Admissão, no formato: dia/mes/ano. Exemplo: 01/07/2020: ")
 
 dia_adm, mes_adm, ano_adm = data_adm.split('/')
 
@@ -16,7 +27,7 @@ data_admissao = datetime.date( int (ano_adm), int (mes_adm), int (dia_adm))
 
 #Recebendo data de demissão
 
-data_dem = input ("Informe a data deDemissão Admissão, no formato: dia/mes/ano. Exemplo: 01/07/2020: ")
+data_dem = input ("\n Informe a data de Demissão Admissão, no formato: dia/mes/ano. Exemplo: 01/07/2020: ")
 
 dia_dem, mes_dem, ano_dem = data_dem.split('/')
 
@@ -88,13 +99,13 @@ salario_por_dia_a_receber = round ((salario_por_dia * resultado_dias), 2)
 
 a_receber = round ((decimo_total_a_receber + ferias_total + salario_por_dia_a_receber), 2)
 
-print ("Seu saldo contribuído ao FGTS é: R$" ,total_fgts)
+print ("\n Seu saldo contribuído ao FGTS é: R$" ,total_fgts)
 
-print ("Valor total a receber de 13º terceiro: R$", decimo_total_a_receber)
+print ("\n Valor total a receber de 13º terceiro: R$", decimo_total_a_receber)
 
-print ("Você deverá receber pelas férias: R$", ferias_total)
+print ("\n Você deverá receber pelas férias: R$", ferias_total)
 
-print (" A empresa deve te pagar o valor total de: R$",a_receber)
+print ("\n A empresa deve te pagar o valor total de: R$",a_receber)
 
 #print(total_fgts)
 
