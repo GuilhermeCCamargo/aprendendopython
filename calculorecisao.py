@@ -20,9 +20,9 @@ if(opcao > 1):
 
 elif (opcao == 0):
 	
-	multa_fgts = (salario * 0.40)
+	multa_fgts = False
 else:
-	multa_fgts = 0
+	multa_fgts = True
 
 #Recebendo data de admissão
 
@@ -104,16 +104,30 @@ salario_por_dia = (salario / 30)
 
 salario_por_dia_a_receber = round ((salario_por_dia * resultado_dias), 2)
 
-a_receber = round ((decimo_total_a_receber + ferias_total + salario_por_dia_a_receber), 2)
+if (multa_fgts == True):
+	
+	multa = (total_fgts * 0.40)
+	
+	a_receber = round ((decimo_total_a_receber + ferias_total + salario_por_dia_a_receber), 2)
 
-print ("\n Seu saldo contribuído ao FGTS é: R$" ,total_fgts)
+	print ("\n Seu saldo contribuído ao FGTS é: R$" ,total_fgts, " \n A Empresa deve pagar 40% de multa em cima do total contríbuido do FGTS.\n R$", multa )
 
-print ("\n Valor total a receber de 13º terceiro: R$", decimo_total_a_receber)
+	print ("\n Valor total a receber de 13º terceiro: R$", decimo_total_a_receber)
 
-print ("\n Você deverá receber pelas férias: R$", ferias_total)
+	print ("\n Você deverá receber pelas férias: R$", ferias_total)
 
-print ("\n A empresa deve te pagar o valor total de: R$",a_receber)
+	print ("\n A empresa deve te pagar o valor total de: R$",a_receber)
+else:
+        
+        a_receber = round ((decimo_total_a_receber + ferias_total + salario_por_dia_a_receber), 2)
 
+        print ("\n Seu saldo contribuído ao FGTS é: R$" ,total_fgts)
+
+        print ("\n Valor total a receber de 13º terceiro: R$", decimo_total_a_receber)
+
+        print ("\n Você deverá receber pelas férias: R$", ferias_total)
+
+        print ("\n A empresa deve te pagar o valor total de: R$",a_receber)
 #print(total_fgts)
 
 
