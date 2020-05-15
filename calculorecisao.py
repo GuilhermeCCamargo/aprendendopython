@@ -8,18 +8,25 @@ import datetime
 
 print ("Seja Bem Vindo! \n")
 
-salario = float ( input('Informe o salário bruto: R$ '))
+salario = float ( input('\n Informe o salário bruto: R$ '))
 
-opcao = int ( input("Foi Justa Causa? \n 1-Sim 2-Não \n"))
+opcao = int ( input("\n Foi Justa Causa? \n \n 0-Sim 1-Não \n \n"))
 
-if(opcao == 1):
-	print("\n Você provavelmente fez cagada \n")
+if(opcao > 1):
+	
+	print("\n Digite um número válido!! \n")
+	
+	exit()
+
+elif (opcao == 0):
+	
+	multa_fgts = (salario * 0.40)
 else:
-	print("\n Você provavelmente não fez cagada. \n")
+	multa_fgts = 0
 
 #Recebendo data de admissão
 
-data_adm = input ("\n Informe a data de Admissão, no formato: dia/mes/ano. Exemplo: 01/07/2020: ")
+data_adm = input ("\n Informe a data de Admissão, no formato: dia/mes/ano. \n \n Exemplo: 01/07/2020: \n \n")
 
 dia_adm, mes_adm, ano_adm = data_adm.split('/')
 
@@ -27,7 +34,7 @@ data_admissao = datetime.date( int (ano_adm), int (mes_adm), int (dia_adm))
 
 #Recebendo data de demissão
 
-data_dem = input ("\n Informe a data de Demissão Admissão, no formato: dia/mes/ano. Exemplo: 01/07/2020: ")
+data_dem = input ("\n Informe a data de Demissão Admissão, no formato: dia/mes/ano. \n \n Exemplo: 01/07/2020: \n \n")
 
 dia_dem, mes_dem, ano_dem = data_dem.split('/')
 
@@ -57,7 +64,7 @@ contribuicao_dias_inss = (contribuicao_inss / 30)
 
 contribuicao_dias = (contribuicao_dias_inss * resultado_dias)
 
-total_fgts = round ((contribuicao_anos + contribuicao_meses + contribuicao_dias), 2)
+total_fgts = round ((contribuicao_anos + contribuicao_meses + contribuicao_dias + multa_fgts), 2)
 
 #print ("Seu saldo contribuído ao FGTS é: R$" ,total_fgts)
 
