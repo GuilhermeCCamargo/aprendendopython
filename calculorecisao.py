@@ -61,6 +61,17 @@ decimo_total_a_receber = round ((decimo_a_receber_por_mes + decimo_a_receber_por
 #Se o funcionário trabalho um ano exato o valor a receber vai estar zerado
 print ("Valor total a receber de 13º terceiro: R$", decimo_total_a_receber)
 
+#Cálculo de férias a receber
+
+valor_dia_trabalhado = ((salario) / 30)
+
+valor_a_receber_por_dias = ((resultado_dias * valor_dia_trabalhado))
+
+valor_a_receber_por_mes = ((meses * decimo_mensal))
+
+valor_a_receber_por_ano = (salario)
+
+
 #print(total_fgts)
 
 
