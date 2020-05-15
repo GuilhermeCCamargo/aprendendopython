@@ -42,9 +42,12 @@ contribuicao_dias_inss = (contribuicao_inss / 30)
 
 contribuicao_dias = (contribuicao_dias_inss * resultado_dias)
 
-total_fgts = (contribuicao_anos + contribuicao_meses + contribuicao_dias)
+total_fgts = round ((contribuicao_anos + contribuicao_meses + contribuicao_dias), 2)
 
-print(total_fgts)
+print ("Seu saldo contribuído ao FGTS é: R$" ,total_fgts)
+
+
+#print(total_fgts)
 
 
 #print("Desde {} passaram {} anos, {} meses, {} dias".format(data_demissao, anos, meses, resultado_dias))
