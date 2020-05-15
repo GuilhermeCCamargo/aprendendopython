@@ -32,6 +32,8 @@ meses, resultado_dias = resultado_dias // 30, resultado_dias %30
 
 contribuicao_inss =  (salario * 0.08)
 
+#Calculando o total da contribuição para o FGTS, levando em conta que a pessoa não receba mais que um salário mínimo e meio por mês.
+
 total_anos = anos * 12
 
 contribuicao_anos = (total_anos * contribuicao_inss)
@@ -46,6 +48,18 @@ total_fgts = round ((contribuicao_anos + contribuicao_meses + contribuicao_dias)
 
 print ("Seu saldo contribuído ao FGTS é: R$" ,total_fgts)
 
+decimo_mensal = ((salario) / 12)
+
+decimo_a_receber_por_mes = ((decimo_mensal * meses))
+
+valor_do_dia = (decimo_mensal / 30)
+
+decimo_a_receber_por_dia = (valor_do_dia * resultado_dias)
+
+decimo_total_a_receber = round ((decimo_a_receber_por_mes + decimo_a_receber_por_dia), 2)
+
+#Se o funcionário trabalho um ano exato o valor a receber vai estar zerado
+print ("Valor total a receber de 13º terceiro: R$", decimo_total_a_receber)
 
 #print(total_fgts)
 
