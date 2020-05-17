@@ -54,6 +54,7 @@ contribuicao_inss =  (salario * 0.08)
 
 #Calculando o total da contribuição para o FGTS, levando em conta que a pessoa não receba mais que um salário mínimo e meio por mês.
 
+def contribuicaoFGTS (salario, anos,)
 total_anos = anos * 12
 
 contribuicao_anos = (total_anos * contribuicao_inss)
